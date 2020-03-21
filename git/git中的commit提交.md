@@ -15,7 +15,7 @@ git commit -m "xxxx"
 ```shell
 git log  HEAD --pretty=format:%s
 ```
-![image](http://note.youdao.com/yws/res/7609/6DFA9703440D4F2F8837CD65E5178F1B)
+![image](https://raw.githubusercontent.com/javaSwing/LearningNotes/master/images/git/git-commit1.png)
 
 2.可以过滤某些commit（比如文档改动），便于快速查找信息。
 ```shell
@@ -24,7 +24,7 @@ git log <last release> HEAD --grep feature
 仅过滤为`feature`特性的提交
 
 3.可以直接从`commit message`中生成Change Log
-![image](http://note.youdao.com/yws/res/7623/23EBF71E513E4B79BA8CFF6D64C530A8)
+![image](https://raw.githubusercontent.com/javaSwing/LearningNotes/master/images/git/git-commit2.png)
 
 ### commit message 格式
 提交的`commit message`格式如下：分为`Header`、`Body`、`Footer`
