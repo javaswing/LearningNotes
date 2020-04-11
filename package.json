@@ -1,0 +1,25 @@
+{
+  "name": "LearningNotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node ./es6/code/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javaSwing/LearningNotes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javaSwing/LearningNotes/issues"
+  },
+  "homepage": "https://github.com/javaSwing/LearningNotes#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
