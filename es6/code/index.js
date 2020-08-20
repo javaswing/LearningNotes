@@ -17,3 +17,4 @@ Children.prototype = new Parent()
 var c = new Children()
 
 c.say()
+
