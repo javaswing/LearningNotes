@@ -15,11 +15,12 @@ let face = '😄';
 
 // 2. 使用module.exports进行导出
 // 2.1 一个文件中同时存在exports和module.exports最终的导出都是以module.exports为主。以下代码运行结果为：{ feeling: '😍' }
-exports.feeling = '😍';
-exports.face = '🥲';
+// exports.feeling = '😍';
+// exports.face = '🥲';
 module.exports = {
-    feeling: '😍'
-}
+    feeling: '😍',
+    face: face
+  }
 
 /** ===========总结=========== */
 // 1. 在写commonjs的代码时，最好只使用module.exports进行导出，毕竟exports仅仅只是一个辅助方法。主力还是module.exports
