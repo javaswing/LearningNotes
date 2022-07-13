@@ -1,5 +1,5 @@
 define(function(require, exports) {
-    exports.add = function(a, b) {
+    exports.increment = function(a, b) {
         return a - b;
     }
 });
