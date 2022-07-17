@@ -1,4 +1,8 @@
 let face = '😄';
+
+function changeFace () {
+  face = '🥲';
+}
 // exports和module.exports是属于commonjs的规范。默认情况下如果不使用exports或者module.exports进行导出，默认导出为 {} 即空对象
 // 1. 如果一个commonjs文件中单独使用exports进行导出，需要使用export.xx = xx这样的方式，为导出对象添加属性
 // 1.1 如果直接使用exports = xxx方式，则会使下面的exports输出失效。下面代码导出为 {}
@@ -19,8 +23,9 @@ let face = '😄';
 // exports.face = '🥲';
 module.exports = {
     feeling: '😍',
-    face: face
-  }
+    face: face,
+    changeFace: changeFace
+}
 
 /** ===========总结=========== */
 // 1. 在写commonjs的代码时，最好只使用module.exports进行导出，毕竟exports仅仅只是一个辅助方法。主力还是module.exports
