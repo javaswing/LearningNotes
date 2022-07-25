@@ -1,7 +1,23 @@
-const {num ,increase} = require('./count')
+// CommonJS 代码
 
-console.log('num is ', num)
+// const {num ,increase} = require('./commonjs/count')
 
-increase()
+// console.log('num is ', num)
 
-console.log('after increase num is ', num)
+// increase()
+
+// console.log('after increase num is ', num)
+
+
+// ESM 代码
+
+import {
+  increase,
+  num,
+} from './esm/increase';
+
+console.log('%c esm num is ','color: red;font-size: 18px;', num)
+
+increase();
+
+console.log('%c esm after increase num is ','color: red;font-size: 18px;', num)
