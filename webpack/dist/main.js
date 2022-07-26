@@ -1,30 +1,58 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "increase": () => (/* binding */ increase),
-/* harmony export */   "num": () => (/* binding */ num)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "esmAddEmoji": () => (/* binding */ esmAddEmoji),
+/* harmony export */   "esmGetTime": () => (/* binding */ esmGetTime)
 /* harmony export */ });
-let num = 1;
+const { cjsGetTime } = __webpack_require__( 2);
 
-function increase() {
-    return num++;
+function esmGetTime() {
+    console.log('esGetTime')
+    cjsGetTime()
+    return 'esGetTime' + Date.now();
 }
 
 
+function esmAddEmoji(source) {
+    return source + '-💩';
+}
+
+
+const esmName = 'ESM';
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (esmName);
 
 /***/ }),
 /* 2 */
-/***/ ((module) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-const word = 'javaswing';
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _esm_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* module decorator */ module = __webpack_require__.hmd(module);
 
-module.exports = {word}
+
+function cjsGetTime() {
+    return 'cjsGetTime' + Date.now()
+}
+
+
+function cjsFormatStr(source) {
+    return (0,_esm_util__WEBPACK_IMPORTED_MODULE_0__.esmAddEmoji)('cjsPrefix-' + source);
+}
+
+console.log(_esm_util__WEBPACK_IMPORTED_MODULE_0__["default"])
+
+module.exports = {
+    cjsGetTime,
+    cjsFormatStr
+}
 
 /***/ })
 /******/ 	]);
@@ -41,13 +69,16 @@ module.exports = {word}
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -63,6 +94,21 @@ module.exports = {word}
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/harmony module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.hmd = (module) => {
+/******/ 			module = Object.create(module);
+/******/ 			if (!module.children) module.children = [];
+/******/ 			Object.defineProperty(module, 'exports', {
+/******/ 				enumerable: true,
+/******/ 				set: () => {
+/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
+/******/ 				}
+/******/ 			});
+/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -84,35 +130,23 @@ module.exports = {word}
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _esm_increase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-// CommonJS 代码
-
-// const {num ,increase} = require('./commonjs/count')
-
-// console.log('num is ', num)
-
-// increase()
-
-// console.log('after increase num is ', num)
+/* harmony import */ var _esm_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
-// ESM 代码
+const { cjsFormatStr } = __webpack_require__( 2);
+
+const name1 = 'javaswing';
+
+const name2 = '李白';
 
 
+console.log(cjsFormatStr(name1))
 
-const {word} = __webpack_require__(2)
 
-console.log('%c esm num is ','color: red;font-size: 18px;', _esm_increase__WEBPACK_IMPORTED_MODULE_0__.num)
-
-;(0,_esm_increase__WEBPACK_IMPORTED_MODULE_0__.increase)();
-
-console.log(word)
-
-console.log('%c esm after increase num is ','color: red;font-size: 18px;', _esm_increase__WEBPACK_IMPORTED_MODULE_0__.num)
+console.log((0,_esm_util__WEBPACK_IMPORTED_MODULE_0__.esmAddEmoji)(name2))
 })();
 
 /******/ })()

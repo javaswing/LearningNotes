@@ -1,27 +1,13 @@
-// CommonJS 代码
+import { esmAddEmoji } from './esm/util';
 
-// const {num ,increase} = require('./commonjs/count')
+const { cjsFormatStr } = require( './commonjs/util');
 
-// console.log('num is ', num)
+const name1 = 'javaswing';
 
-// increase()
-
-// console.log('after increase num is ', num)
+const name2 = '李白';
 
 
-// ESM 代码
+console.log(cjsFormatStr(name1))
 
-import {
-  increase,
-  num,
-} from './esm/increase';
 
-const {word} = require('./commonjs/config')
-
-console.log('%c esm num is ','color: red;font-size: 18px;', num)
-
-increase();
-
-console.log(word)
-
-console.log('%c esm after increase num is ','color: red;font-size: 18px;', num)
+console.log(esmAddEmoji(name2))
