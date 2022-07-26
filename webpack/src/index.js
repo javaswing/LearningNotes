@@ -16,8 +16,12 @@ import {
   num,
 } from './esm/increase';
 
+const {word} = require('./commonjs/config')
+
 console.log('%c esm num is ','color: red;font-size: 18px;', num)
 
 increase();
+
+console.log(word)
 
 console.log('%c esm after increase num is ','color: red;font-size: 18px;', num)

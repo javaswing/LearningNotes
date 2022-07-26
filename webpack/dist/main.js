@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "increase": () => (/* binding */ increase),
@@ -17,6 +17,14 @@ function increase() {
 }
 
 
+
+/***/ }),
+/* 2 */
+/***/ ((module) => {
+
+const word = 'javaswing';
+
+module.exports = {word}
 
 /***/ })
 /******/ 	]);
@@ -76,8 +84,9 @@ function increase() {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _esm_increase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 // CommonJS 代码
@@ -95,9 +104,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const {word} = __webpack_require__(2)
+
 console.log('%c esm num is ','color: red;font-size: 18px;', _esm_increase__WEBPACK_IMPORTED_MODULE_0__.num)
 
 ;(0,_esm_increase__WEBPACK_IMPORTED_MODULE_0__.increase)();
+
+console.log(word)
 
 console.log('%c esm after increase num is ','color: red;font-size: 18px;', _esm_increase__WEBPACK_IMPORTED_MODULE_0__.num)
 })();
