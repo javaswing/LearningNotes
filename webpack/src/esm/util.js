@@ -1,17 +1,10 @@
-const { cjsGetTime } = require( '../commonjs/util');
 
-function esmGetTime() {
-    console.log('esGetTime')
-    cjsGetTime()
-    return 'esGetTime' + Date.now();
-}
+const addPrefix = (str) => {
+  return "ESM👈 " + str;
+};
 
+const moduleName = "I am ESM";
 
-function esmAddEmoji(source) {
-    return source + '-💩';
-}
-export { esmAddEmoji, esmGetTime };
+export { addPrefix };
 
-const esmName = 'ESM';
-
-export default esmName;
+export default moduleName;

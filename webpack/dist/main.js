@@ -1,58 +1,43 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "esmAddEmoji": () => (/* binding */ esmAddEmoji),
-/* harmony export */   "esmGetTime": () => (/* binding */ esmGetTime)
-/* harmony export */ });
-const { cjsGetTime } = __webpack_require__( 2);
 
-function esmGetTime() {
-    console.log('esGetTime')
-    cjsGetTime()
-    return 'esGetTime' + Date.now();
+function addSuffix(str ) {
+    return str + ' 👉CJS'
 }
 
+const name = 'I am cjs module';
 
-function esmAddEmoji(source) {
-    return source + '-💩';
+
+module.exports = {
+    addSuffix,
+    name
 }
-
-
-const esmName = 'ESM';
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (esmName);
 
 /***/ }),
 /* 2 */
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _esm_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* module decorator */ module = __webpack_require__.hmd(module);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addPrefix": () => (/* binding */ addPrefix),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+
+const addPrefix = (str) => {
+  return "ESM👈 " + str;
+};
+
+const moduleName = "ESM";
 
 
-function cjsGetTime() {
-    return 'cjsGetTime' + Date.now()
-}
 
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (moduleName);
 
-function cjsFormatStr(source) {
-    return (0,_esm_util__WEBPACK_IMPORTED_MODULE_0__.esmAddEmoji)('cjsPrefix-' + source);
-}
-
-console.log(_esm_util__WEBPACK_IMPORTED_MODULE_0__["default"])
-
-module.exports = {
-    cjsGetTime,
-    cjsFormatStr
-}
 
 /***/ })
 /******/ 	]);
@@ -69,22 +54,31 @@ module.exports = {
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-/******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -94,21 +88,6 @@ module.exports = {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/harmony module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.hmd = (module) => {
-/******/ 			module = Object.create(module);
-/******/ 			if (!module.children) module.children = [];
-/******/ 			Object.defineProperty(module, 'exports', {
-/******/ 				enumerable: true,
-/******/ 				set: () => {
-/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
-/******/ 				}
-/******/ 			});
-/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -130,23 +109,28 @@ module.exports = {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _esm_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _commonjs_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _commonjs_util__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_commonjs_util__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _esm_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 
 
-const { cjsFormatStr } = __webpack_require__( 2);
 
-const name1 = 'javaswing';
+const source = "javaSwing";
 
-const name2 = '李白';
+const sourceAddSuffix = (0,_commonjs_util__WEBPACK_IMPORTED_MODULE_0__.addSuffix)(source);
 
+const sourceAddPrefix = (0,_esm_util__WEBPACK_IMPORTED_MODULE_1__.addPrefix)(source);
 
-console.log(cjsFormatStr(name1))
+console.log("sourceAddSuffix: ", sourceAddSuffix);
 
+console.log("sourceAddPrefix: ", sourceAddPrefix);
 
-console.log((0,_esm_util__WEBPACK_IMPORTED_MODULE_0__.esmAddEmoji)(name2))
+console.log('name ', _commonjs_util__WEBPACK_IMPORTED_MODULE_0__.name)
+
 })();
 
 /******/ })()

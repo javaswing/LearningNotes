@@ -1,17 +1,12 @@
-import esmName, { esmAddEmoji } from '../esm/util';
 
-function cjsGetTime() {
-    return 'cjsGetTime' + Date.now()
+function addSuffix(str ) {
+    return str + ' 👉CJS'
 }
 
+const name = 'I am cjs module';
 
-function cjsFormatStr(source) {
-    return esmAddEmoji('cjsPrefix-' + source);
-}
-
-console.log(esmName)
 
 module.exports = {
-    cjsGetTime,
-    cjsFormatStr
+    addSuffix,
+    name
 }

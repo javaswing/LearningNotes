@@ -1,13 +1,14 @@
-import { esmAddEmoji } from './esm/util';
+import { addSuffix, name } from "./commonjs/util";
+import  { addPrefix } from "./esm/util";
 
-const { cjsFormatStr } = require( './commonjs/util');
+const source = "javaSwing";
 
-const name1 = 'javaswing';
+const sourceAddSuffix = addSuffix(source);
 
-const name2 = '李白';
+const sourceAddPrefix = addPrefix(source);
 
+console.log("sourceAddSuffix: ", sourceAddSuffix);
 
-console.log(cjsFormatStr(name1))
+console.log("sourceAddPrefix: ", sourceAddPrefix);
 
-
-console.log(esmAddEmoji(name2))
+console.log('name ', name)
