@@ -4,18 +4,14 @@
 /* 1 */
 /***/ ((module) => {
 
-
-function addSuffix(str ) {
-    return str + ' 👉CJS'
+function addSuffix(str) {
+  return str + " 👉CJS";
 }
-
-const name = 'I am cjs module';
-
 
 module.exports = {
-    addSuffix,
-    name
-}
+  addSuffix,
+};
+
 
 /***/ }),
 /* 2 */
@@ -24,19 +20,13 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "addPrefix": () => (/* binding */ addPrefix),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "addPrefix": () => (/* binding */ addPrefix)
 /* harmony export */ });
-
 const addPrefix = (str) => {
   return "ESM👈 " + str;
 };
 
-const moduleName = "ESM";
 
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (moduleName);
 
 
 /***/ })
@@ -121,15 +111,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const source = "javaSwing";
 
-const sourceAddSuffix = (0,_commonjs_util__WEBPACK_IMPORTED_MODULE_0__.addSuffix)(source);
+console.log("sourceAddSuffix: ", (0,_commonjs_util__WEBPACK_IMPORTED_MODULE_0__.addSuffix)(source));
 
-const sourceAddPrefix = (0,_esm_util__WEBPACK_IMPORTED_MODULE_1__.addPrefix)(source);
-
-console.log("sourceAddSuffix: ", sourceAddSuffix);
-
-console.log("sourceAddPrefix: ", sourceAddPrefix);
-
-console.log('name ', _commonjs_util__WEBPACK_IMPORTED_MODULE_0__.name)
+console.log("sourceAddPrefix: ", (0,_esm_util__WEBPACK_IMPORTED_MODULE_1__.addPrefix)(source));
+console.log(_commonjs_util__WEBPACK_IMPORTED_MODULE_0___default.a)
+console.log(_commonjs_util__WEBPACK_IMPORTED_MODULE_0___default())
 
 })();
 
